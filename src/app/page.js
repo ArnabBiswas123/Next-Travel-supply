@@ -24,7 +24,7 @@ export default function Home() {
             gap: "10px",
             // padding: "5px 15px",
             zIndex: "1",
-            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+            // boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           }}
         >
           <h1 className=" font-home  font-extrabold text-4xl text-white">
