@@ -15,7 +15,7 @@ export default function Home() {
           style={{
             position: "absolute",
             display: "flex",
-            top: "140px",
+            top: "100px",
             left: "60%",
             transform: "translateX(-50%)",
             width: "80%",
