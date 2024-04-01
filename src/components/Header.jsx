@@ -31,7 +31,7 @@ export default function Header() {
 
         <h1 className=" font-home font-extrabold text-lg md:text-2xl bg-gradient-to-r  from-amber-800 to-yellow-500 text-transparent bg-clip-text">GlobalDuniya</h1>
         </Box>
-        <Link href={'/signup'}>
+        <Link href={'/login'}>
         
         <Tooltip title="Login">
           <Image
