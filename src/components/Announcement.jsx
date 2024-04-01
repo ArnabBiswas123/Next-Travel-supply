@@ -34,7 +34,7 @@ export default function Announcement() {
         100+ million visitors
         </h2>
         <p className=" font-home text-slate-800 text-center">
-        Reach global customers: Sell on TripAdvisor, Viator, 3500+ partners
+        Reach global customers: Sell on GlobalDuniya, 3500+ partners
         </p>
       </div>
 
@@ -50,10 +50,10 @@ export default function Announcement() {
       >
         <Image src={"/list.png"} width={80} height={80}></Image>
         <h2 className=" font-home font-bold text-lg  m-2">
-        Free TripAdvisor listing
+        Free GlobalDuniya listing
         </h2>
         <p className=" font-home text-slate-800 text-center">
-        Boost your reputation with reviews by creating or updating your listing on TripAdvisor.
+        Boost your reputation with reviews by creating or updating your listing on GlobalDuniya.
         </p>
       </div>
 

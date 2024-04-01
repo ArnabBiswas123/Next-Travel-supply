@@ -38,10 +38,10 @@ export default function Listing() {
             </span>
           <span className=" sm:w-full lg:w-1/2">
             <h1 className=" text-left mb-8 font-home font-bold text-xl">
-              1. Establish your TripAdvisor listing.
+              1. Establish your GlobalDuniya listing.
             </h1>
             <p className=" font-home text-left">
-              Start by creating your TripAdvisor listing. Enter your details to
+              Start by creating your GlobalDuniya listing. Enter your details to
               set up a new listing or locate your existing one. Effortlessly
               manage your reviews to build trust with travelers and boost your
               sales.
