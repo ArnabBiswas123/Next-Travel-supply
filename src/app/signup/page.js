@@ -2,9 +2,9 @@
 
 export default function page() {
   return (
-<section  style={{backgroundImage: "url('/sunset.jpg')"}}>
+<section style={{backgroundImage: "url('/sunset.jpg')", backgroundSize:'cover', height:'100vh', backgroundPosition:'center', backgroundRepeat:'no-repeat'}}>
       <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto md:h-screen lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+        <div className="w-full bg-white rounded-lg shadow mt-20 md:mt-5 sm:max-w-md xl:p-0">
         <h1 className=" font-home font-extrabold text-lg md:text-2xl  mt-10 bg-gradient-to-t text-center from-amber-800 to-yellow-500 text-transparent bg-clip-text">GlobalDuniya</h1>
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight font-home tracking-tight text-gray-900 md:text-2xl">
