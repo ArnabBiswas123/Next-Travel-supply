@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "What is GlobalDuniya?",
     answer:
-      "GlobalDuniya offers a platform for creating bookable experiences, ranging from guided tours to surf lessons, which travelers worldwide can purchase online. Suppliers selling products through us gain access to customers via GlobalDuniya, the GlobalDuniya App, Viator.com, and thousands of partner sites.",
+      "GlobalDuniya offers a platform for creating bookable experiences, ranging from guided tours to surf lessons, which travelers worldwide can purchase online. Suppliers selling products through us gain access to customers via GlobalDuniya, the GlobalDuniya App, GlobalDuniya.com, and thousands of partner sites.",
   },
   {
     question: "Who can register?",
@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "What do I get when I sign up?",
     answer:
-      "Upon registration, you'll receive a business listing if you don't already have one—a personalized page on GlobalDuniya spotlighting your business and customer reviews. Additionally, you'll gain complimentary entry to the Viator Management Center. Here, you can publish your products on both GlobalDuniya and Viator, oversee bookings and reviews, and ensure seamless management. All products you create will seamlessly integrate into your GlobalDuniya listing, enhancing your visibility and accessibility to potential customers.",
+      "Upon registration, you'll receive a business listing if you don't already have one—a personalized page on GlobalDuniya spotlighting your business and customer reviews. Additionally, you'll gain complimentary entry to the GlobalDuniya Management Center. Here, you can publish your products on both GlobalDuniya and GlobalDuniya, oversee bookings and reviews, and ensure seamless management. All products you create will seamlessly integrate into your GlobalDuniya listing, enhancing your visibility and accessibility to potential customers.",
   },
   // Add more FAQ items as needed
 ];

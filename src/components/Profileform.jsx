@@ -1,37 +1,146 @@
-import { Box, FormControl, FormLabel, Input} from '@mui/material';
-
 export default function Profileform() {
   return (
-    <>
-      <h1 className=" font-home text-center mt-4  font-semibold text-orange-600">
-        Arnab Please Complete your Profile!!
-      </h1>
-      <form className="max-w-md mx-auto my-10">
-      <div className="relative z-0 w-full mb-5 group">
-        <input
-          type="email"
-          name="floating_email"
-          id="floating_email"
-          className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
-          required
-        />
-        <label
-          htmlFor="floating_email"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >
-          Email address
-        </label>
-      </div>
-      {/* Repeat the above structure for other input fields */}
-      {/* Remember to add event handlers if needed */}
-      <button
-        type="submit"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    <section
+      className=" pt-5 overflow-hidden"
+      style={{
+        backgroundImage: "url('/ocean.jpg')",
+        backgroundSize: "cover",
+        height: "100vh",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className="  mx-auto bg-white rounded-lg shadow p-8 space-y-4 w-full  my-5 sm:w-3/4 md:w-1/2 lg:w-2/5 xl:1/3"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          // alignItems: "flex-start",
+          flexDirection: "column",
+          // width: "50%",
+        }}
       >
-        Submit
-      </button>
-    </form>
-    </>
+        <h1 className=" font-home text-center mt-4  font-semibold text-orange-600">
+          Arnab Please Complete your Profile!!
+        </h1>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <label className=" font-home ">
+            Name of the director/ owner/ CEO
+          </label>
+          <input
+            className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="Enter Name of the director/ owner/ CEO"
+          />
+        </div>
+        <div
+          style={{ width: "100%", display: "flex", flexDirection: "column" }}
+        >
+          <label className=" font-home ">company Legal name</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="company Legal name"
+            // style={{ width: "80%" }}
+          />
+        </div>
+        <div
+          style={{ width: "100%", display: "flex", flexDirection: "column" }}
+        >
+          <label className=" font-home ">Company registration Number</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="Company registration Number"
+            // style={{ width: "80%" }}
+          ></input>
+        </div>
+
+        <div
+          style={{ width: "100%", display: "flex", flexDirection: "column" }}
+        >
+          <label className=" font-home ">Doing business name</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="Doing business name"
+            // style={{ width: "80%" }}
+          ></input>
+        </div>
+        <div
+          style={{ width: "100%", display: "flex", flexDirection: "column" }}
+        >
+          <label className=" font-home ">Tax document</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="file"
+            placeholder="Upload Tax document"
+            // style={{ width: "80%" }}
+          ></input>
+        </div>
+
+        <div
+          style={{ width: "100%", display: "flex", flexDirection: "column" }}
+        >
+          <label className=" font-home ">Website</label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="Website"
+            // style={{ width: "80%" }}
+          ></input>
+        </div>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <input
+            type="checkbox"
+            id="informationCorrect"
+            name="informationCorrect"
+            className="w-8 h-8"
+            // style={{ width: "20px", height: "20px" }}
+            // Add necessary styles for checkbox if needed
+          />
+          <p className="text-sm font-home text-gray-500 mt-2 ml-2">
+            By submitting this form, you acknowledge that providing false
+            information may result in account closure and for future of
+            commission payments.
+          </p>
+        </div>
+        <button
+          className=" font-home"
+          style={{
+            backgroundColor: "#3B82F6", // Tailwind CSS blue-500
+            color: "#FFFFFF", // White color
+            padding: "0.5rem 1rem", // Padding
+            borderRadius: "0.375rem", // Rounded corners
+            cursor: "pointer", // Pointer cursor on hover
+            transition: "background-color 0.3s ease-in-out", // Smooth background color transition on hover
+          }}
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </section>
   );
 }
