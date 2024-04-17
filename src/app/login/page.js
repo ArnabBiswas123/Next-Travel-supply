@@ -1,6 +1,78 @@
-// import Image from "next/image"
+'use client'
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from '@mui/material/Alert';
 
 export default function page() {
+ const [email,setEmail]=useState('');
+ const [password,setPassword]=useState('');
+ const [errormsg,setErrormsg]=useState('');
+ const [open, setOpen] = useState(false);
+ const [errors, setErrors] = useState({
+  email: "",
+  password: "",
+});
+const router = useRouter();
+
+const emailChange = (e) => {
+  setEmail(e.target.value);
+  setErrors({ ...errors, email: "" });
+};
+
+const passwordChange = (e) => {
+  setPassword(e.target.value);
+  setErrors({ ...errors, password: "" });
+};
+
+const handleClose = (event, reason) => {
+  // if (reason === 'clickaway') {
+  //   return;
+  // }
+  setOpen(false);
+};
+
+
+const submitHandler=async(e)=>{
+  e.preventDefault();
+  let newErrors = {};
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const alphaNumericRegex = /^[a-zA-Z0-9]+$/;
+  if(!emailRegex.test(email)) newErrors.email = "Enter valid email"
+  if(password.length<5 || !alphaNumericRegex.test(password)){
+    newErrors.password = "Enter valid password"
+  }
+  setErrors(newErrors);
+
+
+  if (Object.keys(newErrors).length === 0) {
+    const response = await fetch(
+      `https://next-travel-backend-vercel.vercel.app/api/v1/supplier/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      }
+    );
+    const json = await response.json();
+    if (json.success === true) {
+      localStorage.setItem("token", json.token);
+      router.push("/dashboard");
+    } else {
+      setErrormsg(json.msg)
+      setOpen(true);
+    }
+  }
+
+
+}
+
+
   return (
     <section
       style={{
@@ -11,6 +83,15 @@ export default function page() {
         backgroundRepeat: "no-repeat",
       }}
     >
+       <Snackbar
+        open={open}
+        autoHideDuration={5000}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        onClose={handleClose}
+        message="This Snackbar will be dismissed in 5 seconds."
+      >
+       <Alert severity="error">{errormsg}</Alert>
+       </Snackbar>
       <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white mt-20 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
           <h1 className=" font-home font-extrabold text-lg md:text-2xl  mt-10 bg-gradient-to-t text-center from-amber-800 to-yellow-500 text-transparent bg-clip-text">
@@ -20,7 +101,7 @@ export default function page() {
             <h1 className="text-xl font-bold leading-tight font-home tracking-tight text-gray-900 md:text-2xl">
               Please Login using your account.
             </h1>
-            <form className="space-y-4 md:space-y-4" action="#">
+            <form className="space-y-4 md:space-y-4" onSubmit={submitHandler}>
               <div>
                 <label
                   htmlFor="email"
@@ -32,10 +113,19 @@ export default function page() {
                   type="email"
                   name="email"
                   id="email"
+                  value={email}
+                  onChange={emailChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="Enter your email id"
-                  required
+                  // required
                 />
+                  {errors.email ? (
+                  <p className=" text-red-600 text-xs font-home m-0 p-0">
+                    Enter a valid Email
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
               <div>
                 <label
@@ -49,9 +139,18 @@ export default function page() {
                   name="password"
                   id="password"
                   placeholder="••••••••"
+                  value={password}
+                  onChange={passwordChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  "
-                  required
+                  // required
                 />
+                 {errors.password ? (
+                  <p className=" text-red-600 text-xs font-home m-0 p-0">
+                  Password shoud be atleast 5 character long
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
 
               <button
