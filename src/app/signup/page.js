@@ -182,7 +182,7 @@ export default function page() {
                 />
                 {errors.password ? (
                   <p className=" text-red-600 text-xs font-home m-0 p-0">
-                  Password shoud be atleast 5 character long
+                  Password should be atleast 5 character long
                   </p>
                 ) : (
                   ""
