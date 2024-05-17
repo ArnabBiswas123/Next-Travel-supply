@@ -1,9 +1,12 @@
 "use client";
 import HeaderDashboard from "@/components/HeaderDashboard";
 import Pending from "@/components/Pending";
+import Rejected from "@/components/Rejected";
 import Profileform from "@/components/Profileform";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+const fetchURL='http://localhost:5000'
+// const fetchURL='https://next-travel-backend-vercel.vercel.app'
 
 export default function page() {
   const [userdata, setUserdata] = useState("");
@@ -18,7 +21,7 @@ export default function page() {
   const fetchData = async (token) => {
     try {
       const result = await fetch(
-        `https://next-travel-backend-vercel.vercel.app/api/v1/supplier/getsupplier`,
+        `${fetchURL}/api/v1/supplier/getsupplier`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -31,7 +34,11 @@ export default function page() {
         localStorage.removeItem('token')
         return router.push("/login");
       } else {
-        setUserdata(json.user);
+        if(json.user.isvarified==='accepted'){
+            router.push('/dashboard/accepted');
+        }
+        else{
+        setUserdata(json.user);}
       }
     } catch (error) {
       console.log(error);
@@ -53,7 +60,7 @@ export default function page() {
       <section
       className=" pt-5 "
       style={{
-        backgroundImage: "url('/ocean.jpg')",
+        backgroundImage: "url('/beluns.jpg')",
         backgroundSize: "cover",
         height: "115vh",
         backgroundPosition: "center",
@@ -63,7 +70,7 @@ export default function page() {
       {userdata.isvarified === "not-filled" ? (
         <Profileform name={userdata.name} fetchagain={fetchagain}></Profileform>
       ) : (
-        userdata.isvarified === "pending"?<Pending></Pending>:''
+        userdata.isvarified === "pending"?<Pending></Pending>:(userdata.isvarified === "rejected"?<Rejected></Rejected>:'')
       )}
         </section>
     </>

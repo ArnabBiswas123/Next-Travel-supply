@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+const fetchURL='http://localhost:5000'
+// const fetchURL='https://next-travel-backend-vercel.vercel.app'
 
 export default function Profileform({ name,fetchagain }) {
   const router = useRouter();
@@ -58,7 +60,7 @@ export default function Profileform({ name,fetchagain }) {
 
 
       const response = await fetch(
-        "https://next-travel-backend-vercel.vercel.app/api/v1/supplier/detailsform",
+        `${fetchURL}/api/v1/supplier/detailsform`,
         {
           method: "put",
           headers: {
@@ -97,17 +99,6 @@ export default function Profileform({ name,fetchagain }) {
   
 
   return (
-    // <section
-    //   className=" pt-5 "
-    //   style={{
-    //     backgroundImage: "url('/ocean.jpg')",
-    //     backgroundSize: "cover",
-
-    //     height: "115vh",
-    //     backgroundPosition: "center",
-    //     backgroundRepeat: "no-repeat",
-    //   }}
-    // >
       <>
       <Snackbar
         open={open}
@@ -123,9 +114,7 @@ export default function Profileform({ name,fetchagain }) {
         style={{
           display: "flex",
           justifyContent: "center",
-          // alignItems: "flex-start",
           flexDirection: "column",
-          // width: "50%",
         }}
       >
         <h1 className=" font-home text-center mt-4  font-semibold text-orange-600">

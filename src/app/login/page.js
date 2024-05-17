@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from '@mui/material/Alert';
-
+const fetchURL='http://localhost:5000'
+// const fetchURL='https://next-travel-backend-vercel.vercel.app'
 export default function page() {
  const [email,setEmail]=useState('');
  const [password,setPassword]=useState('');
@@ -47,7 +48,7 @@ const submitHandler=async(e)=>{
 
   if (Object.keys(newErrors).length === 0) {
     const response = await fetch(
-      `https://next-travel-backend-vercel.vercel.app/api/v1/supplier/login`,
+      `${fetchURL}/api/v1/supplier/login`,
       {
         method: "POST",
         headers: {

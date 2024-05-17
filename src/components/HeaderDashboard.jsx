@@ -36,7 +36,7 @@ export default function HeaderDashboard() {
       <Link href={"#"}>
         <Tooltip title="Logout">
           <Image
-            src={"/logout.png"}
+            src={"/logout.svg"}
             height={10}
             width={50}
             style={{ cursor: "pointer" }}
